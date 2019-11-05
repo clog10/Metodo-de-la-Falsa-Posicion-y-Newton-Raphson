@@ -57,8 +57,8 @@ public class FalsaPos extends javax.swing.JFrame {
         txu.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txu.setNextFocusableComponent(Aceptar);
 
-        Res.setColumns(20);
         Res.setEditable(false);
+        Res.setColumns(20);
         Res.setFont(new java.awt.Font("Ubuntu Light", 1, 24)); // NOI18N
         Res.setRows(5);
         Res.setNextFocusableComponent(salir);

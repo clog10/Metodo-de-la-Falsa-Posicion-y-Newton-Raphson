@@ -34,6 +34,8 @@ public class NewtonRaphson extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         salir = new javax.swing.JButton();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Método de Newton-Raphson");
@@ -55,8 +57,8 @@ public class NewtonRaphson extends javax.swing.JFrame {
         fun.setFont(new java.awt.Font("Liberation Serif", 0, 15)); // NOI18N
         fun.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 
-        Res.setColumns(20);
         Res.setEditable(false);
+        Res.setColumns(20);
         Res.setFont(new java.awt.Font("Ubuntu Light", 1, 24)); // NOI18N
         Res.setRows(5);
         jScrollPane1.setViewportView(Res);
@@ -77,6 +79,10 @@ public class NewtonRaphson extends javax.swing.JFrame {
                 salirActionPerformed(evt);
             }
         });
+
+        jLabel4.setText("Valeria Vásquez Zarate");
+
+        jLabel5.setText("Ingeniería Química");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -104,10 +110,17 @@ public class NewtonRaphson extends javax.swing.JFrame {
                                 .addGroup(layout.createSequentialGroup()
                                     .addComponent(jLabel2)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(txtx0, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE))))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 286, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                    .addComponent(txtx0, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(65, 65, 65)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel4)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(14, 14, 14)
+                                .addComponent(jLabel5)))))
+                .addGap(28, 28, 28)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 401, Short.MAX_VALUE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -116,7 +129,11 @@ public class NewtonRaphson extends javax.swing.JFrame {
                 .addComponent(jScrollPane1)
                 .addContainerGap())
             .addGroup(layout.createSequentialGroup()
-                .addGap(23, 23, 23)
+                .addGap(55, 55, 55)
+                .addComponent(jLabel4)
+                .addGap(17, 17, 17)
+                .addComponent(jLabel5)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 60, Short.MAX_VALUE)
                 .addComponent(jLabel3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(fun, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -124,7 +141,7 @@ public class NewtonRaphson extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(txtx0, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(67, 67, 67)
                 .addComponent(Aceptar)
                 .addGap(16, 16, 16)
                 .addComponent(Borrar)
@@ -194,12 +211,15 @@ public class NewtonRaphson extends javax.swing.JFrame {
             } else if (Ear < tol && i != 1) {
                 tol = 0;
             }
+            r += ("Iteración: " + i + "\nX" + i + "        : " + x + "\n"
+                + "Er         : " + Ear*100 + "\n\n");
+
         } while (max > 0 || tol > 0 && i < 500);
         if (i == 500) {
             r = "La Función Diverge\n\n";
         }
-        r += ("Iteración: " + i + "\nX" + i + "        : " + x + "\n"
-                + "Er         : " + Ear + "\n\n");
+//        r += ("Iteración: " + i + "\nX" + i + "        : " + x + "\n"
+//                + "Er         : " + Ear + "\n\n");
 
         if (si) {
             JOptionPane.showMessageDialog(null, "Iteraciones Realizadas!", "Resultados", JOptionPane.INFORMATION_MESSAGE);
@@ -261,6 +281,8 @@ public class NewtonRaphson extends javax.swing.JFrame {
     private javax.swing.JTextField fun;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JButton salir;
     private javax.swing.JTextField txtx0;
