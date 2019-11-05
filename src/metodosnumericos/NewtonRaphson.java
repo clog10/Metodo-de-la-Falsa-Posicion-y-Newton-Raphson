@@ -1,20 +1,15 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package metodosnumericos;
 
 import javax.swing.JOptionPane;
 import org.nfunk.jep.ParseException;
 
 /**
- *
- * @author jam2
+ * @author Clog10
  */
 public class NewtonRaphson extends javax.swing.JFrame {
 
     private Funcion F;
-    
+
     public NewtonRaphson() {
         initComponents();
         setLocationRelativeTo(null);
@@ -173,7 +168,7 @@ public class NewtonRaphson extends javax.swing.JFrame {
                 }
                 double fx = F.Evaluar(xAnt);
                 F.setF(deri);
-                x = F.Redondear(xAnt - (fx/F.Evaluar(xAnt)), dec);
+                x = F.Redondear(xAnt - (fx / F.Evaluar(xAnt)), dec);
                 Ear = F.Redondear(Math.abs((x - xAnt) / x), dec > 10 ? dec : 8);
                 if (Ear == 0) {
                     max = 0;

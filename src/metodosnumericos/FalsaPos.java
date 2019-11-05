@@ -3,16 +3,15 @@ package metodosnumericos;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
-import org.nfunk.jep.ParseException; 
+import org.nfunk.jep.ParseException;
 
 /**
- *
- * @author clog10
+ * @author Clog10
  */
 public class FalsaPos extends javax.swing.JFrame {
 
     private Funcion F;
-    
+
     public FalsaPos() {
         initComponents();
         setLocationRelativeTo(null);
@@ -181,7 +180,7 @@ public class FalsaPos extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-    
+
     private void BorrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BorrarActionPerformed
         Res.setText(null);
         txu.setText(null);
@@ -192,7 +191,6 @@ public class FalsaPos extends javax.swing.JFrame {
 
     private void AceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AceptarActionPerformed
         double x = 0, xl = 0, xu = 0, Ear = 0;
-       // double xA=0;
         int max = 0, dec = 0;
         Res.setText(null);
         F = new Funcion(fun.getText());
@@ -214,18 +212,18 @@ public class FalsaPos extends javax.swing.JFrame {
                     } else {
                         tol = F.tolerancia();
                     }
-                 
+
                 }
-                fxl = F.Redondear(F.Evaluar(xl), dec); 
-                fxu = F.Redondear(F.Evaluar(xu), dec); 
+                fxl = F.Redondear(F.Evaluar(xl), dec);
+                fxu = F.Redondear(F.Evaluar(xu), dec);
                 double xAnt = x;
                 x = F.Redondear(xu - ((fxu * (xl - xu)) / (fxl - fxu)), dec);
                 fx = F.Redondear(F.Evaluar(x), dec);
                 Ear = F.Redondear(Math.abs((x - xAnt) / x), dec > 10 ? dec : 8);
-                
+
                 if (max > 1 || Ear >= tol) {
                     if (fx * fxu < 0) {
-                        r+="\nXl          : " + xl;
+                        r += "\nXl          : " + xl;
                         xl = x;
                     } else if (fx * fxl < 0) {
                         xu = x;
@@ -248,7 +246,7 @@ public class FalsaPos extends javax.swing.JFrame {
                 txu.setText(null);
                 txl.requestFocus();
                 si = false;
-                
+
             } catch (ParseException ex) {
                 Logger.getLogger(FalsaPos.class.getName()).log(Level.SEVERE, null, ex);
                 JOptionPane.showMessageDialog(null, "Función Incorrecta", "ERROR", 0);
@@ -263,7 +261,7 @@ public class FalsaPos extends javax.swing.JFrame {
             } else if (Ear < tol && i != 1) {
                 tol = 0;
             }
-            r += ("\nIteración: " + i +"\n"
+            r += ("\nIteración: " + i + "\n"
                     + "Xu        : " + xu + "\nXr        : " + x + "\n"
                     + "Ea         : " + Ear * 100 + "\n\n");
             if (si) {
@@ -289,7 +287,7 @@ public class FalsaPos extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(FalsaPos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-    java.awt.EventQueue.invokeLater(new Runnable() {
+        java.awt.EventQueue.invokeLater(new Runnable() {
 
             @Override
             public void run() {
