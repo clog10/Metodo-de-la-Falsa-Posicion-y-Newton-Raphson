@@ -36,7 +36,7 @@ public class FalsaPos extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Método de Falsa Posición");
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         setName("Falsa"); // NOI18N
@@ -272,7 +272,7 @@ public class FalsaPos extends javax.swing.JFrame {
     }//GEN-LAST:event_AceptarActionPerformed
 
     private void salirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_salirActionPerformed
-        System.exit(0);
+        this.setVisible(false);
     }//GEN-LAST:event_salirActionPerformed
 
     public static void main(String args[]) {

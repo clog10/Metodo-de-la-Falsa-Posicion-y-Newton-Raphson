@@ -37,7 +37,7 @@ public class NewtonRaphson extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Método de Newton-Raphson");
 
         Aceptar.setText("Aceptar");
@@ -235,7 +235,7 @@ public class NewtonRaphson extends javax.swing.JFrame {
     }//GEN-LAST:event_BorrarActionPerformed
 
     private void salirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_salirActionPerformed
-        System.exit(0);
+        this.setVisible(false);
     }//GEN-LAST:event_salirActionPerformed
 
     /**
